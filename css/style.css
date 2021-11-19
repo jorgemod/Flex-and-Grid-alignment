@@ -70,3 +70,31 @@ h1, h2 {
 }
 
 /* //////////////////////////////////////////1.- Display Flex///////////////////////////////////////////////////// */
+
+.d-flex{
+    display: flex;
+}
+
+/* ////////////////////////////////////////////2.- Flex direction /////////// */
+
+.d-flex-2{
+    display: flex;
+    flex-direction: column;
+}
+
+/* ////////////////////////////////////////////3.- Justify Content (Dirección Row) /////////// */
+
+.d-flex-3{
+    display: flex;
+    justify-content: space-around;
+    /* justify-content: center; */
+}
+
+/* ////////////////////////////////////////////4.- Justify Content (Dirección Column) /////////// */
+
+.d-flex-4{
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    justify-content: space-around;
+}
