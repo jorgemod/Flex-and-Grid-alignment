@@ -98,3 +98,61 @@ h1, h2 {
     height: 1000px;
     justify-content: space-around;
 }
+
+/* ////////////////////////////////////////////5.- Align Items (Dirección Row) /////////// */
+.d-flex-5{
+    display: flex;
+    flex-direction: row;
+    /* aqui entonces el align items alinea verticalmente cuando la direccion es row */
+    /* los valores disponibles son: */
+    /* align-items: flex-end;
+    align-items: flex-start; */
+    align-items: center;
+    height: 400px;
+}
+
+/* ////////////////////////////////////////////6.- Align Items (Dirección Columna) /////////// */
+
+.d-flex-6{
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    /* en este caso donde la direccion es coluumna 
+    el align items acomoda de forma horizontal y sus valores son los siguientes*/
+    align-items: center;
+    /* align-items: flex-end; */
+    /* align-items: flex-start; */
+    /* align-items: stretch;  */
+}
+
+
+/* //////////////////////////////////////////// 7.- Align Items y JustifyContent /////////// */
+
+.d-flex-7{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+
+    /* de manera vertical es  */
+    align-items: center;
+    /* de manera horizontal es  */
+    justify-content: flex-end;
+}
+
+
+/* ////////////////////////////////////////////     8.- flex basis                  /////////// */
+
+.d-flex-8{
+    display: flex;
+}
+/* en este caso el flex basis se le aplica directamente a cada uno de los elementos 
+y es flexible osea que en un inicio tienen 200px pero si requiere más entonces se los asignará sin problema para evitar desbordes */
+.d-flex-8 box{
+    flex-basis: 200px;
+}
+
+
+
+
+
+
