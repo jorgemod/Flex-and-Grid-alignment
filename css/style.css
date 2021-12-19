@@ -151,8 +151,102 @@ y es flexible osea que en un inicio tienen 200px pero si requiere más entonces 
     flex-basis: 200px;
 }
 
+/* ////////////////////////////////////////////     9.- Gap y Calc                  /////////// */
+
+/* activamos las propiedades flex y luego el space between en para 
+separar los elementos con el espacio sobrante  */
+.d-flex-9{
+    display: flex;
+   justify-content: space-between;
+}
+/* usamos un pseudo selector llamado nth-child para seleccionar al primer hijo 
+que tenga la clase "box" y le damos la mitad del espacio menos 1 rem que es 
+de separacion  */
+.d-flex-9 .box:nth-child(1){
+    flex-basis: calc(50% - 1rem);
+}
+/* para los demás les damos 25 menos 1 rem para hacerlo simetrico todo 
+y el space between tomará esos espacion disponibles para separar los boxes */
+.d-flex-9 .box:nth-child(2),
+.d-flex-9 .box:nth-child(3){
+    flex-basis: calc(25% - 1rem);
+}
+
+/* NOTA: tambien tenemos la propiedad gap para poner espacios entre los flex 
+peero esta propiedad es muy reciente y no todos los navegadores la soportan */
 
 
+/* ////////////////////////////////////////////     10.- Flex Wrap                  /////////// */
+
+.d-flex-10{
+    display: flex; 
+    /* la siguiente propiedad nos sirve para que no se vayan todos los elementos a la derecha
+    sino que se haga un salto de linea si ya no caben a la derecha */
+    flex-wrap: wrap;
+}
+
+.d-flex-10 .box{
+    flex-basis: 33.3%;
+    
+}
 
 
+/* ////////////////////////////////////////////     11.- Flex Grow                  /////////// */
 
+.d-flex-11{
+    display: flex;
+}
+/* el factor de crecimiento va en los hijos 
+este es como una reparticion de pixeles que quiere decir que el espacio
+disponible quitando margin y paddin lo irá repartiendo por partes
+segun el valor de flex-grow */
+.d-flex-11 .box:nth-child(1){
+    flex-grow: 4;
+}
+.d-flex-11 .box:nth-child(2){
+    flex-grow: 1;
+}
+.d-flex-11 .box:nth-child(3){
+    flex-grow: 1;
+}
+
+
+/* ////////////////////////////////////////////     12.- Flex Shrink                  /////////// */
+/* este es para cuando la pagina se encoje
+aqui se ve como va disminuyendo el tamaño  */
+.d-flex-12{
+    display: flex;
+}
+.d-flex-12 .box{
+    /* factor de crecimiento lo tomará despues de su tamaño base
+    es decir despues de esos 300px de base, empezará a crecer hasta ocupar
+    todo el ancho de la pantalla */
+    flex-grow: 1;
+    /* este es el ancho base que por defecto tendrán y se amolda al conetenido  */
+    
+    flex-basis: 300px;
+}
+/* ahora cuando la pestaña se haga pequeña entonces el facto con el que disminuye
+es de 2, recuerda que el valor por defecto es de 1 
+al ponerle dos a un elemento entonces este disminuirá más rapido su tamaño
+con respecto a los otros  */
+.d-flex-12 .box:nth-child(3)
+{
+    flex-shrink: 2;
+}
+
+
+/* ////////////////////////////////////////////     13.- Flex Shorthand                  /////////// */
+
+.d-flex-13 {
+    display: flex;
+    gap: 1rem;
+}
+.d-flex-13 .box{
+    flex: 1 0 33.3%;
+}
+
+/* el flex es una abreviacion de los que vimos antes
+el primer valor es grow 
+el segundo valor es shrink 
+y el tercer valor es el basis */
